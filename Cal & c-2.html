@@ -1,0 +1,253 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Cal& C-Converter2</title>
+</head>
+<style>
+.title{
+	font-family: 'Gloria Hallelujah', cursive;
+	font-size: 80px;
+	color:WHITE;
+	top:10px;
+	}
+.bg{
+	background:linear-gradient(to left, green, #188);
+	height:100%;
+	}	
+ul{
+	list-style:none;
+	margin:0px;
+	padding:0px;}
+ul li{
+	float:left;
+	width:1422px;
+	color:indigo;
+	background-color:white;
+	text-align:center;
+	line-height:40px;
+	font-family:Helvetica;
+}
+ul li:hover{
+	background-color: #F90;
+	color:white;
+	font-size:20px;
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	cursor:pointer;}	
+ul li ul li{
+	display:none;}
+ul li:hover ul li{
+	display: inline-block;
+	border-radius:200px 200px 200px 200px;
+	margin-bottom:5px;}
+a{
+	text-decoration:none;
+	}				
+.align{
+	position:absolute;
+	transform:translate(545px,180px);
+	}
+select{
+	width:220px;
+	height:50px;
+	font-size:19px;
+	font-family:Helvetica;
+	background-color: #F90; 
+	border-color:#F90;
+	border-width:thick;
+	font-style: oblique;
+	font-weight:900;
+	opacity:.5;}	
+.textview{
+	width:270px;
+	height:50px;
+	font-size:19px;
+	font-family:Helvetica;
+	opacity:.5;}	
+.textview:hover{
+	opacity:1;
+	}	
+option{
+	border-color:#F90;
+	border-width:thick;
+	font-weight:900;
+	margin:2px;
+	padding:2px;
+	opacity:.5;}
+select:hover{
+	opacity:1;
+	}	
+button{
+	width:270px;
+	height:50px;
+	font-size:19px;
+	font-weight:bold;
+	background-color:transparent;
+	border-color:transparent;
+	cursor: pointer;
+	color:white;
+	}
+button:hover{
+	background-color: #F90;
+}
+</style>
+
+<body class="bg">  
+<div class="title">"Cal& C"</div>
+<ul><li><b><a>Go To Calculator</a></b>
+<ul><li><b><a href="file:///Users/kushankurghosh/Desktop/docs/WebDesign/Ongoing_proj/Undercnstruct_cal/Cal%20&%20c-3.html">Click Me !</a></b></li>
+</ul></li></ul>
+
+<div class="align">
+<input type="number" class="textview" id="inp1" onchange="cal()"/><br />
+<select id="con" onchange="take()">
+<option value="NA" disabled="disabled" selected="selected">Select One</option>
+<option value="Kilo">"Kilogram"</option>
+<option value="Hect">"Hectogram"</option>
+<option value="Deca">"Decagram"</option>
+<option value="Gra">"Gram"</option>
+<option value="Deci">"Decigram"</option>
+<option value="Cent">"Centigram"</option>
+<option value="Mili">"Miligram"</option></select><br />
+<input type="text" class="textview" id="inp2" disabled="disabled"/><br />
+<select id="conv" onchange="take2()">
+<option value="NA" disabled="disabled" selected="selected">Select One</option>
+<option value="Kilog">"Kilogram"</option>
+<option value="Hectg">"Hectogram"</option>
+<option value="Decag">"Decagram"</option>
+<option value="Gram">"Gram"</option>
+<option value="Decig">"Decigram"</option>
+<option value="Centg">"Centigram"</option>
+<option value="Milig">"Miligram"</option></select><br /><br />
+<button onclick="location.href='file:///Users/kushankurghosh/Desktop/docs/WebDesign/Cal&%20C-Home.html'" >HOME</button></div>
+<script>
+function take(){
+	return document.getElementById("con").value;
+	}
+function take2(){
+	return document.getElementById("conv").value;
+	}	
+function cal(){
+	a=document.getElementById("inp1").value;
+	b=take();
+	c=take2();
+	if(b==""){
+		document.getElementById("inp2").value="";
+		}
+	else{
+		switch(b){
+			case "Kilo":
+		if(c=="Kilog"){
+	document.getElementById("inp2").value="Change unit";}	
+		if(c=="Gram"){
+	document.getElementById("inp2").value=a*1000;}
+	    if(c=="Hectg"){
+	document.getElementById("inp2").value=a*10;}
+		if(c=="Decag"){
+	document.getElementById("inp2").value=a*100;}
+		if(c=="Decig"){
+	document.getElementById("inp2").value=a*10000;}
+        if(c=="Centg"){
+	document.getElementById("inp2").value=a*100000;} 
+		if(c=="Milig"){
+	document.getElementById("inp2").value=a*1000000;}
+		break;
+		    case "Hect":
+		if(c=="Kilog"){
+	document.getElementById("inp2").value=a/10;}
+	    if(c=="Hectg"){
+	document.getElementById("inp2").value="Change unit";}
+	    if(c=="Decag"){
+	document.getElementById("inp2").value=a*10;}
+	    if(c=="Gram"){
+	document.getElementById("inp2").value=a*100;}
+	    if(c=="Decig"){
+	document.getElementById("inp2").value=a*1000;}
+	    if(c=="Centg"){
+	document.getElementById("inp2").value=a*10000;}
+	    if(c=="Milig"){
+	document.getElementById("inp2").value=a*100000;}
+		break;
+		    case "Deca":
+		if(c=="Kilog"){
+	document.getElementById("inp2").value=a/100;}
+	    if(c=="Hectg"){
+	document.getElementById("inp2").value=a/10;}
+	    if(c=="Decag"){
+	document.getElementById("inp2").value="Change unit";}
+	    if(c=="Gram"){
+	document.getElementById("inp2").value=a*10;}
+	    if(c=="Decig"){
+	document.getElementById("inp2").value=a*100;}
+	    if(c=="Centg"){
+	document.getElementById("inp2").value=a*1000;}
+	    if(c=="Milig"){
+	document.getElementById("inp2").value=a*10000;}
+		break;
+		     case "Gra":
+		if(c=="Kilog"){
+	document.getElementById("inp2").value=a/1000;}
+	    if(c=="Hectg"){
+	document.getElementById("inp2").value=a/100;}
+	    if(c=="Decag"){
+	document.getElementById("inp2").value=a/10;}
+	    if(c=="Gram"){
+	document.getElementById("inp2").value="Change unit";}
+	    if(c=="Decig"){
+	document.getElementById("inp2").value=a*10;}
+	    if(c=="Centg"){
+	document.getElementById("inp2").value=a*100;}
+	    if(c=="Milig"){
+	document.getElementById("inp2").value=a*1000;}
+		break;
+		     case "Deci":
+		if(c=="Kilog"){
+	document.getElementById("inp2").value=a/10000;}
+	    if(c=="Hectg"){
+	document.getElementById("inp2").value=a/1000;}
+	    if(c=="Decag"){
+	document.getElementById("inp2").value=a/100;}
+	    if(c=="Gram"){
+	document.getElementById("inp2").value=a/10;}
+	    if(c=="Decig"){
+	document.getElementById("inp2").value="Change unit";}
+	    if(c=="Centg"){
+	document.getElementById("inp2").value=a*10;}
+	    if(c=="Milig"){
+	document.getElementById("inp2").value=a*100;}
+		break;
+		     case "Cent":
+		if(c=="Kilog"){
+	document.getElementById("inp2").value=a/100000;}
+	    if(c=="Hectg"){
+	document.getElementById("inp2").value=a/10000;}
+	    if(c=="Decag"){
+	document.getElementById("inp2").value=a/1000;}
+	    if(c=="Gram"){
+	document.getElementById("inp2").value=a/100;}
+	    if(c=="Decig"){
+	document.getElementById("inp2").value=a/10;}
+	    if(c=="Centg"){
+	document.getElementById("inp2").value="Change unit";}
+	    if(c=="Milig"){
+	document.getElementById("inp2").value=a*10;}
+		break;
+		      case "Mili":
+		if(c=="Kilog"){
+	document.getElementById("inp2").value=a/1000000;}
+	    if(c=="Hectg"){
+	document.getElementById("inp2").value=a/100000;}
+	    if(c=="Decag"){
+	document.getElementById("inp2").value=a/10000;}
+	    if(c=="Gram"){
+	document.getElementById("inp2").value=a/1000;}
+	    if(c=="Decig"){
+	document.getElementById("inp2").value=a/100;}
+	    if(c=="Centg"){
+	document.getElementById("inp2").value=a/10;}
+	    if(c=="Milig"){
+	document.getElementById("inp2").value="Change unit";}
+		break; }}}
+</script>
+</body>
+</html>
